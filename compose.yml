@@ -23,7 +23,7 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:${KC_VERSION}
-    command: ["start-dev", "--import-realm", "--http-enabled true", "--proxy-headers xforward", "--hostname-strict false", "--log-level INFO"]
+    command: ["start-dev", "--import-realm", "--http-enabled","true", "--proxy-headers" ,"xforwarded", "--hostname-strict", "false", "--log-level", "INFO"]
     restart: unless-stopped
     environment:
       KC_DB: postgres
@@ -90,9 +90,9 @@ services:
   
   nginx:
     image: nginx
-    volume:
+    volumes:
       - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/certs/*:/etc/nginx/certs:ro
+      - ./nginx/ccerts:/etc/nginx/ccerts:ro
     command:  [nginx-debug, '-g', 'daemon off;']
     ports:
       - "35801:443"
@@ -102,5 +102,6 @@ services:
   cloudflared:
     image: cloudflare/cloudflared:latest
     restart: unless-stopped
-    command: ["tunnel", "--no-autoupdate", "run", "--token ${ARGOTOKEN}"]
+    command: ["tunnel", "--no-autoupdate", "run", "--token","${ARGOTOKEN}"]
     logging: *logging
+
