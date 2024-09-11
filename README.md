@@ -12,6 +12,10 @@ docker compose up -d
 | Keycloak | http://localhost:8080 | `admin` | `keycloak`
 | Prometheus | http://localhost:9090 | |
 | Grafana | http://localhost:3000 | `admin` | `grafana`
+| CloudFlared | NA | NA | NA 
+| Nginx | Host  35801 -> Container 443 | NA | NA
+| Nginx | Host 35800 -> Container 80 | NA | NA 
+
 
 | Useful commands | Description
 |-|-
