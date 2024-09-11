@@ -17,6 +17,8 @@ docker compose up -d
 | Nginx | Host 35800 -> Container 80 | NA | NA 
 
 
+
+
 | Useful commands | Description
 |-|-
 | `docker stats` | Containers resource usage (`--no-stream` only pull the first result)
