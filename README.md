@@ -25,3 +25,11 @@ docker compose up -d
 | `docker compose logs` | Shows logs of containers (`-f` to follow logs)
 | `docker compose down` | Stop and remove containers (`-v` remove named volumes declared in the volumes section of the Compose file and anonymous volumes attached to containers)
 | `docker system prune -a -f` | Remove all unused containers, networks, images (`--volumes` prune volumes)
+
+| Finishing setup | Description 
+| - | -
+| 'openssl dhparam ./nginx/ccerts/dhparam.pem 2048' |
+| 'copy your Cloudflare Public into ./nginx/ccerts/cert.pem' | This is where Nginx will use for the public key
+| 'copy your Cloudflare Private into ./nginx/ccerts/key.pem' | This is where nginx will use for the private key
+| 'chmod 600 ./nginx/ccerts/key.pem ./nginx/ccerts/cert.pem' | Prevent Write access as best you can. 
+
