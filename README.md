@@ -7,6 +7,8 @@
 docker compose up -d
 ```
 
+![The Blick](img/aicooked.png)
+
 | App | Port | Username | Password
 |-|-|-|-
 | Keycloak | http://localhost:8080 | `admin` | `keycloak`
