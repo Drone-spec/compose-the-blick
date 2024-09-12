@@ -29,7 +29,7 @@ docker compose up -d
 | Finishing setup | Description 
 | - | -
 | `openssl dhparam ./nginx/ccerts/dhparam.pem 2048` |
-| `copy your Cloudflare Public into ./nginx/ccerts/cert.pem` | This is where Nginx will use for the public key
-| `copy your Cloudflare Private into ./nginx/ccerts/key.pem` | This is where nginx will use for the private key
+| copy your Cloudflare Public into ./nginx/ccerts/cert.pem | This is where Nginx will use for the public key
+| copy your Cloudflare Private into ./nginx/ccerts/key.pem | This is where nginx will use for the private key
 | `chmod 600 ./nginx/ccerts/key.pem ./nginx/ccerts/cert.pem` | Prevent Write access as best you can. 
 
