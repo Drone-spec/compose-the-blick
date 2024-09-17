@@ -105,3 +105,13 @@ services:
     command: ["tunnel", "--no-autoupdate", "run", "--token","${ARGOTOKEN}"]
     logging: *logging
 
+
+  duckbeacon:
+    image: lscr.io/linuxserver/duckdns:latest
+    environment:
+      SUBDOMAINS: ${DOMAIN}
+      TOKEN: ${DUCKTOKEN}
+      LOG_FILE: true
+    logging: *logging
+
+
